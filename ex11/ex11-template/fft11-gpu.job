@@ -1,0 +1,8 @@
+#!/bin/bash -l
+#SBATCH --job-name=fft11
+#SBATCH --account=uzg2 --constraint=gpu
+#SBATCH --time=0-0:5:00 --partition=debug
+#SBATCH --nodes=1 --ntasks-per-node=1 --cpus-per-task=288 --ntasks-per-core=1
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+srun fft11
